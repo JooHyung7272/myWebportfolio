@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1><%= title %></h1>
+
+    <table border="1">
+        <input type="hidden" name="idx" value="<%=row.idx%>"/>
+        <tr>
+            <td>작성자</td>
+            <td><input type="text" name="name" id="name" value="<%=row.name%>" required/></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td><input type="text" name="title" id="title" value="<%=row.title%>" required/></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td><textarea name="content" id="content" cols="30" rows="10" required><%=row.content%></textarea></td>
+        </tr>
+        <tr>
+            <td>변경일</td>
+            <td><%=row.modidate%></td>
+        </tr>
+        <tr>
+            <td>등록일</td>
+            <td><%=row.regdate%></td>
+        </tr>
+        <tr>
+            <td>조회수</td>
+            <td><%=row.hit%></td>
+        </tr>
+        <tr>
+            <td>
+                <a href="/board/page">목록</a>
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
