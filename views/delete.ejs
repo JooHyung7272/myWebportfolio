@@ -1,45 +1,89 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <title>게시글 삭제</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/delete.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/jquery.mousewheel.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/index.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <form action="/board/delete" method="post">
-      <table border="1">
-        <input type="hidden" name="idx" value="<%=row.idx%>"/>
-        <tr>
-          <td>작성자</td>
-          <td><input type="text" name="name" id="name" value="<%=row.name%>" required/></td>
-        </tr>
-        <tr>
-          <td>제목</td>
-          <td><input type="text" name="title" id="title" value="<%=row.title%>" required/></td>
-        </tr>
-        <tr>
-          <td>내용</td>
-          <td><textarea name="content" id="content" cols="30" rows="10" required><%=row.content%></textarea></td>
-        </tr>
-        <tr>
-          <td>패스워드</td>
-          <td><input type="password" name="passwd" id="passwd" required/></td>
-        </tr>
-        <tr>
-          <td>변경일</td>
-          <td><%=row.modidate%></td>
-        </tr>
-        <tr>
-          <td>등록일</td>
-          <td><%=row.regdate%></td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <button type="submit">삭제하기</button>
-            <a href="/board/page">목록</a>
-          </td>
-        </tr>
-      </table>
-    </form>
+    <header id="header">
+      <h1 id="portfolio">
+        <a href="http://dlwngud26.dothome.co.kr/#mainbanner"><span class="pf">Portfolio</span></a>
+        <span class="mbj">Made by JooHyung</span>
+      </h1>
+      <nav id="gnbWrap">
+        <h1 class="hidden">홈페이지메뉴</h1>
+        <ul id="gnb">
+          <li><a href="http://dlwngud26.dothome.co.kr/#usingskill">Skill</a></li>
+          <li><a href="http://dlwngud26.dothome.co.kr/#introduce">About me</a></li>
+          <li><a href="http://dlwngud26.dothome.co.kr/#project">Project</a></li>
+          <li><a href="http://jhportfolio7272board.herokuapp.com/board/page">Board</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div id="deleteWrap">
+          <h1>자유게시판</h1>
+          <form action="/board/delete" method="post">
+            <table>
+              <input type="hidden" name="idx" value="<%=row.idx%>"/>
+              <tr class="titleWrap">
+                <td class="title" colspan="2">Edit Post</td>
+              </tr>
+              <tr class="contentWrap">
+                <td>Title</td>
+                <td><input type="text" name="title" id="title" value="<%=row.title%>" required/></td>
+              </tr>
+              <tr class="contentWrap">
+                <td>Author</td>
+                <td><input type="text" name="name" id="name" value="<%=row.name%>" required/></td>
+              </tr>
+              <tr class="contentWrap">
+                <td>Content</td>
+                <td><input type="text" name="content" id="content" value="<%=row.content%>" required></td>
+              </tr>
+              <tr class="contentWrap">
+                <td>Password</td>
+                <td><input type="password" name="passwd" id="passwd" required/></td>
+              </tr>
+              <tr class="contentWrap">
+                <td>modidate</td>
+                <td><%=row.modidate%></td>
+              </tr>
+              <tr class="contentWrap">
+                <td>regdate</td>
+                <td><%=row.regdate%></td>
+              </tr>
+            </table>
+            <div class="btn">
+              <button type="submit">삭제하기</button>
+              <a href="/board/page" class="back">돌아가기</a>
+            </div>
+            </form>
+            </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <h1 class="hidden">푸터</h1>
+      <div class="copyright">
+        <p>&copy;2020, JOOHYUNG ALL RIGHTS RESERVED
+           <br>Design, Programming : LeeJooHyung
+        </p>
+        <small>e-mail : dlwngud26@naver.com | phone : 010-5646-7272</small>
+      </div>
+      <div class="urllink">
+        <ul>
+          <li class="facebook"><a href="https://www.facebook.com/ljh7272" target="_blank">페이스북</a></li>
+          <li class="naver"><a href="https://blog.naver.com/dlwngud26" target="_blank">네이버블로그</a></li>
+          <li class="instagram"><a href="https://www.instagram.com/jh_hamm" target="_blank">인스타그램</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

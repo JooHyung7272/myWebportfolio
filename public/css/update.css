@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* 초기화 */
+table { border-style: none; }
+input { border: 1px solid #ccc; border-radius: 3px; }
+
+#updateWrap { margin: 0 auto; width: 60%;
+               padding: 150px 0 0 0; }
+#updateWrap table { width: 100%; }
+#updateWrap h1 { font-size: 36px; padding-bottom: 30px; text-align: center; }
+#updateWrap .titleWrap .title { border: 1px solid #989898; background: #e3e3e3;
+                               border-left: 0;
+                               border-right: 0;
+                               height: 30px;
+                               line-height: 30px;
+                               padding-left: 10px; }
+#updateWrap table .contentWrap td { padding: 10px;  }
+#updateWrap table input { width: 100%; height: 30px; }
+#updateWrap table tr:nth-child(4) input { height: 200px; }
+#updateWrap .btn { margin: 20px auto 0; text-align: center;
+                  border-top: 1px solid #989898; }
+#updateWrap .btn button { display: block; float: right; border-style:none;
+                         margin-top: 20px;
+                         font-size: 16px;
+                         width: 80px; height: 30px;
+                         background: gray; color: white;
+                         border-radius: 5px; line-height: 30px; }
+#updateWrap .btn button:hover { background: orange; }
+#updateWrap .btn .back { display: block; float: right; margin: 20px 15px 0 0;
+                         width: 80px; height: 30px;
+                         background: gray; color: white;
+                         border-radius: 5px; line-height: 30px; }
+#updateWrap .btn .back:hover { background: orange; }

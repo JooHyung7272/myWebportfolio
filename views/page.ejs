@@ -1,52 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <title>게시판</title>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/page.css">
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/jquery.mousewheel.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/page.js"></script>
 </head>
 <body>
-<h1><%= title %></h1>
-<a href="/board/write">글쓰기</a>
-<table border="1">
-    <tr>
-        <td>번호</td>
-        <td>작성자</td>
-        <td>제목</td>
-        <td>수정일</td>
-        <td>등록일</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <%
-    for(var i = (page * page_num) - page_num; i < (page * page_num); i++) {
-    if(i > length){
-        i++;
-    }else{
-        var data = rows[i]
-    %>
-    <tr>
-        <td><%= i + 1 %></td>
-        <td><%= data.name %></td>
-        <td><a href="/board/read/<%= data.idx %>"><%= data.title %></a></td>
-        <td><%= data.modidate %></td>
-        <td><%= data.regdate %></td>
-        <td><a href="/board/update/<%= data.idx %>">수정</a></td>
-        <td><a href="/board/delete/<%= data.idx %>">삭제</a></td>
-    </tr>
-    <% }
-    }
-    %>
-    <tr>
-        <td colspan="6">
+  <header id="header">
+    <h1 id="portfolio">
+      <a href="http://dlwngud26.dothome.co.kr/#mainbanner"><span class="pf">Portfolio</span></a>
+      <span class="mbj">Made by JooHyung</span>
+    </h1>
+    <nav id="gnbWrap">
+      <h1 class="hidden">홈페이지메뉴</h1>
+      <ul id="gnb">
+        <li><a href="http://dlwngud26.dothome.co.kr/#usingskill">Skill</a></li>
+        <li><a href="http://dlwngud26.dothome.co.kr/#introduce">About me</a></li>
+        <li><a href="http://dlwngud26.dothome.co.kr/#project">Project</a></li>
+        <li><a href="http://jhportfolio7272board.herokuapp.com/board/page">Board</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div id="boardWrap">
+        <h1>자유게시판</h1>
+          <table>
+            <tr class="tabletitle">
+              <td>번호</td>
+              <td>제목</td>
+              <td>작성자</td>
+              <!-- <td>수정날짜</td> -->
+              <td>등록날짜</td>
+              <td colspan="2"></td>
+            </tr>
             <%
-            for(var j = 0; j < rows.length / page_num; j++){
+            for(var i = (page * page_num) - page_num; i < (page * page_num); i++) {
+            if(i > length){
+                i++;
+            }else{
+                var data = rows[i]
             %>
-                [<a href="/board/page/<%= j + 1 %>"><%= j + 1 %></a>]
-            <%
+            <tr class="tablecontent">
+              <td><%= i + 1 %></td>
+              <td class="title"><a href="/board/read/<%= data.idx %>"><%= data.title %></a></td>
+              <td><%= data.name %></td>
+              <!-- <td><%= data.modidate %></td> -->
+              <td><%= data.regdate %></td>
+              <td><a href="/board/update/<%= data.idx %>" class="fontcolor">수정</a></td>
+              <td><a href="/board/delete/<%= data.idx %>"class="fontcolor">삭제</a></td>
+            </tr>
+            <% }
             }
             %>
-        </td>
-    </tr>
-</table>
-</body>
+            <tr>
+              <td colspan="7">
+                <%
+                for(var j = 0; j < rows.length / page_num; j++){
+                %>
+                    [<a href="/board/page/<%= j + 1 %>"><%= j + 1 %></a>]
+                <%
+                }
+                %>
+              </td>
+            </tr>
+          </table>
+          <div class="btn">
+            <a href="/board/write" class="write">글쓰기</a>
+          </div>
+        </div>
+      </section>
+      <footer id="footer">
+        <h1 class="hidden">푸터</h1>
+        <div class="copyright">
+          <p>&copy;2020, JOOHYUNG ALL RIGHTS RESERVED
+             <br>Design, Programming : LeeJooHyung
+          </p>
+          <small>e-mail : dlwngud26@naver.com | phone : 010-5646-7272</small>
+        </div>
+        <div class="urllink">
+          <ul>
+            <li class="facebook"><a href="https://www.facebook.com/ljh7272" target="_blank">페이스북</a></li>
+            <li class="naver"><a href="https://blog.naver.com/dlwngud26" target="_blank">네이버블로그</a></li>
+            <li class="instagram"><a href="https://www.instagram.com/jh_hamm" target="_blank">인스타그램</a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>

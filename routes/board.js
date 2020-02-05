@@ -1,20 +1,28 @@
 var express = require('express');
 var router = express.Router();
-// var mysql_odbc = require('../db/db_conn')();
-// var conn = mysql_odbc.init();
 var mysql = require('mysql');
 var fs = require('fs');
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
 
+// DataBase
 var connection = mysql.createConnection({
-  host: 'us-cdbr-iron-east-04.cleardb.net',
+  host: '127.0.0.1',
   port: '3306',
-  user: 'bc026db212fcff',
-  password: 'e61ee40b',
-  database: 'heroku_a69da8a13773e93'
+  user: 'root',
+  password: '1234',
+  database: 'nodedb'
 });
 connection.connect();
+
+// var connection = mysql.createConnection({
+//   host: 'us-cdbr-iron-east-04.cleardb.net',
+//   port: '3306',
+//   user: 'bc026db212fcff',
+//   password: 'e61ee40b',
+//   database: 'heroku_a69da8a13773e93'
+// });
+// connection.connect();
 
 router.use(bodyParser.urlencoded({extended:false}));
 
@@ -27,7 +35,7 @@ router.get('/page/:page',function(req,res,next)
 {
     var page = req.params.page;
     var sql = "select idx, name, title, date_format(modidate,'%Y-%m-%d %H:%i:%s') modidate, " +
-        "date_format(regdate,'%Y-%m-%d %H:%i:%s') regdate from board";
+        "date_format(regdate,'%Y-%m-%d') regdate from board";
     connection.query(sql, function (err, rows) {
         if (err) console.error("err : " + err);
         res.render('page', {title: ' 게시판 리스트', rows: rows, page:page, length:rows.length-1, page_num:10, pass:true});

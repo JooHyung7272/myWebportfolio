@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* 초기화 */
+table { border-style: none; }
+
+/* 게시판 */
+#boardWrap { margin: 0 auto; width: 60%;
+             padding: 150px 0 0 0;
+             text-align: center; }
+#boardWrap h1 { font-size: 36px; padding-bottom: 30px; }
+#boardWrap table { margin: 0 auto; }
+#boardWrap td { padding: 10px 20px; }
+#boardWrap .tabletitle { text-align: center; margin: 0 auto; background: #e3e3e3; }
+#boardWrap .tablecontent .title { text-align: left; width: 340px; }
+#boardWrap .tablecontent .title a { display: block; height: 16px; width: 340px; }
+#boardWrap .tablecontent .title a:hover { color: orange; }
+#boardWrap tr.tablecontent:nth-child(even) { background: #f2feff;}
+#boardWrap .fontcolor { color: blue; }
+#boardWrap .fontcolor:hover { color: orange; }
+#boardWrap .btn { margin: 0 auto; }
+#boardWrap .btn .write { display: block; float: right;
+                         width: 80px; height: 30px;
+                         background: gray; color: white;
+                         border-radius: 5px; line-height: 30px; }
+#boardWrap .btn .write:hover { background: orange; }

@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/* 초기화 */
+* { margin: 0; padding: 0; }
+h1, h2, p, a { font-size: 1em; font-style: normal; text-decoration: none; color: #000;}
+li { list-style: none; }
+.hidden { position: absolute; left: -9999px; }
+html, body, main { height: 100%; width: 100%; min-width: 1240px; }
+
+/* 웹폰트 */
+@font-face { font-family: 'YanoljaYacheR'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YanoljaYacheR.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Cafe24Oneprettynight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Handon3gyeopsal300g'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal300g.woff') format('woff'); font-weight: normal; font-style: normal; }
+body { font-family : 'Handon3gyeopsal300g'; }
+#portfolio .mbj { font-family : 'BMJUA'; }
+/* #loginmenu { font-family: 'BMJUA'; } */
+#portfolio .pf { font-family : 'Handon3gyeopsal300g'; }
+/* #menuWrap { font-family : 'BMJUA'; } */
+
+/* 메인 상단 */
+#header { position: absolute; top: 0; left: 0; z-index: 9999;
+          background: #fff;
+          display: flex;
+          flex-flow: column wrap;
+          border-bottom: 1px solid rgb(200, 200, 200);
+          width: 100%; height: 100px; }
+#header > * { height: 100%; }
+
+/* 포트폴리오 로고부분 */
+#portfolio { margin: 26px 0 26px 50px; }
+#portfolio .pf { font-weight: bold; font-size: 32px;  }
+#portfolio .mbj { display: block;
+                  font-size: 14px; font-weight: normal;
+                  text-align: center; }
+
+/* 홈페이지메뉴 */
+#gnbWrap { align-self: flex-start; }
+#gnb { display: flex; flex-grow: row nowrap; justify-content: center; }
+#gnb li { flex: 0 0 200px; text-align: center; }
+#gnb li a { line-height: 100px; font-weight: bold; }
+#gnb li a:hover { color: orange; }
+
+/* 배너 이미지 */
+#mainbanner { height: 100%; position: relative; }
+#bannerimg { background: url(../images/notebook.png) center center/cover no-repeat;
+             margin: 0 auto; text-align: center;
+             display: table; width: 100%; height: 100%; }
+p.typing-txt { display: none; }
+.typing { display: table-cell; vertical-align: middle;
+          font-size: 50px;
+          color: #fff;
+          margin-bottom: 20px;
+          animation-name: cursor;
+          animation-duration: 0.3s;
+          animation-iteration-count: infinite; }
+
+/* Technology */
+section { width: 100%; height: 100%; position: relative; z-index: 1; }
+section > p { font-size: 36px; font-weight: bold;
+              text-align: center;
+              padding: 30px 0; }
+#usingskill > p { padding: 0; }
+#usingskill { padding: 130px 0 0 0; }
+#usingskill .p1 { position: absolute; left: 30%;
+                  font-size: 36px; font-weight: bold;
+                  padding-bottom: 40px; }
+#usingskill .p2 { margin-top: 80px; text-align: center;
+                  font-size: 24px; font-weight: bold;}
+#usingskill .img1 img { position: absolute;
+                        margin-top: 20px;
+                        left: 15%;}
+#usingskill .img2 img { position: absolute;
+                        margin-top: 271px;
+                        left: 5%; }
+
+/* About me 공통 */
+#introduce { background: url(../images/studyjh.png) center top/cover no-repeat; }
+#introduce p { color: white; }
+#introduceWrap { padding: 110px 0 0 0;
+                 width: 60%;
+                 margin: 0 auto;
+             /* background: url(../images/studyjh.jpg) center center/cover no-repeat; */
+                }
+#introduceWrap > p { font-size: 36px; font-weight: bold;
+                     text-align: center;
+                     padding: 30px 0; }
+#introduce .introWrap .title { font-size: 1.6em; font-weight: bold;
+                               width: 135px;
+                               float: left;
+                               border-right: 1.5px solid white; }
+#introduce .pWrap { float: left; margin-left: 20px; }
+#introduce .pWrap p { margin-bottom: 5px; }
+#introduce .introWrap { float: left; }
+#introduce .introWrap2 { float: right; }
+/* About me ------- Profile */
+
+/* About me ------- Blog */
+#introduce .introWrap .blog { clear: both; padding-top: 50px; }
+#introduce .introWrap .blog .pWrap a { color: rgb(105, 130, 255); }
+#introduce .introWrap .blog .pWrap a:hover { color: orange; }
+/* About me ------- License */
+#introduce .introWrap .license { clear: both; padding-top: 50px; }
+/* About me ------- Education */
+#introduce .introWrap .education { clear: both; padding-top: 50px; }
+#introduce .introWrap .education .pWrap .year { color:lightgray;
+                                                font-size: 15px; }
+/* About me ------- Skill */
+#introduce .introWrap2 .title { font-size: 1.6em; font-weight: bold; }
+#introduce .introWrap2 .graphWrap { width: 350px; height: 480px;
+                                    margin-top: 20px;
+                                    background: rgb(255, 255, 255);
+                                    border-radius: 20px; }
+#introduce .introWrap2 .graphWrap li { padding: 20px 15px 0; }
+#introduce .introWrap2 .graphWrap .bar { width: 100%; height: 5px; background: #dfdfdf; margin-top: 5px; }
+#introduce .introWrap2 .graphWrap .movingbar1 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar2 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar3 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar4 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar5 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar6 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar7 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar8 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar9 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+#introduce .introWrap2 .graphWrap .movingbar10 { width: 0%; height: 5px; background: orange; margin-top: -5px; }
+
+
+/* project */
+#project { padding: 110px 0 0 0; }
+#project .myportfolio { display: block; clear: both;
+                        width: 60%;
+                        margin: 0 auto;
+                        padding: 20px 0; }
+#project .myportfolio .pWrap { float: left;
+                               vertical-align: top;
+                               padding-top: 5px;}
+#project .myportfolio .pWrap a { color: blue; }
+#project .myportfolio .pWrap a:hover { color: orange; }
+#project .myportfolio .pfimg1 { float: left;
+                                width: 400px; height: 200px;
+                                background: url(../images/project1.png) left top/cover no-repeat;
+                                margin-right: 10px; }
+#project .myportfolio .pfimg2 { float: left;
+                                width: 400px; height: 200px;
+                                background: #b6b6b6;
+                                margin-right: 10px; }
+#project .etc { clear: both; padding-top: 20px; }
+/* footer */
+#footer { position: relative;
+          padding: 25px 0;
+          text-align: center;
+          font-size: 14px;
+          background: #333; color: #fff; }
+#footer p { margin-bottom: 12px; color: #fff; }
+#footer small { font-size: 14px; font-weight: bold; }
+#footer .urllink { position: absolute;
+                   top: 15%; left: 70%;
+                   padding: 30px 40px 0 0; }
+#footer .urllink li { float: left; padding: 0 5px; }
+#footer .urllink .facebook a { width: 32px; height: 32px;
+                               display: block;
+                               text-indent: -9999px; overflow: hidden;
+                               background: url(../images/fbbloginsta.png) no-repeat;
+                               background-position: left; }
+#footer .urllink .naver a { width: 35px; height: 32px; display: block;
+                            text-indent: -9999px; overflow: hidden;
+                            background: url(../images/fbbloginsta.png) no-repeat;
+                            background-position: center; }
+#footer .urllink .instagram a { width: 32px; height: 32px; display: block;
+                                text-indent: -9999px; overflow: hidden;
+                                background: url(../images/fbbloginsta.png) no-repeat;
+                                background-position: right; }
