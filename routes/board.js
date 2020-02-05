@@ -6,23 +6,23 @@ var ejs = require('ejs');
 var bodyParser = require('body-parser');
 
 // DataBase
-var connection = mysql.createConnection({
-  host: '127.0.0.1',
-  port: '3306',
-  user: 'root',
-  password: '1234',
-  database: 'nodedb'
-});
-connection.connect();
-
 // var connection = mysql.createConnection({
-//   host: 'us-cdbr-iron-east-04.cleardb.net',
+//   host: '127.0.0.1',
 //   port: '3306',
-//   user: 'bc026db212fcff',
-//   password: 'e61ee40b',
-//   database: 'heroku_a69da8a13773e93'
+//   user: 'root',
+//   password: '1234',
+//   database: 'nodedb'
 // });
 // connection.connect();
+
+var connection = mysql.createConnection({
+  host: 'us-cdbr-iron-east-04.cleardb.net',
+  port: '3306',
+  user: 'bc026db212fcff',
+  password: 'e61ee40b',
+  database: 'heroku_a69da8a13773e93'
+});
+connection.connect();
 
 router.use(bodyParser.urlencoded({extended:false}));
 
